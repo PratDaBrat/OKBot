@@ -67,7 +67,7 @@ OKBot.on('message', message => {
 				count: m
 			}
 		});
-		message.channel.send('${tag.username} is the Overlord with ${tag.count} OKs');
+		message.channel.send(`${tag.username} is the Overlord with ${tag.count} OKs`);
 	}*/
 });
 
