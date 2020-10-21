@@ -71,4 +71,4 @@ OKBot.on('message', async message => {
 	}
 });
 
-OKBot.login(config.token);
+OKBot.login(process.env.BOT_TOKEN);
