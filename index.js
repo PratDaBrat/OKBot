@@ -30,15 +30,15 @@ OKBot.once('ready', () => {
 	Tags.sync();
 });
 
-OKBot.on('message', message => {
+OKBot.on('message', async message => {
 
 	if(message.content.toLowerCase().includes('ok') == true && !message.author.bot) {
 		message.react('🆗');
 		counter ++;
-		/*const tag = await Tags.create({
+		const tag = await Tags.create({
 			userID: message.author.username,
 		});
-		tag.increment('count');*/
+		tag.increment('count');
 	}
 
 	if(counter == 20){
@@ -60,7 +60,7 @@ OKBot.on('message', message => {
 	else if(command === 'help'){
 		message.channel.send("add helpful comments here");
 	}
-	/*else if(command === 'overlord'){
+	else if(command === 'overlord'){
 		const m = Tags.max('count').then(max =>{});
 		const tag = await Tags.findOne({
 			where: {
@@ -68,7 +68,7 @@ OKBot.on('message', message => {
 			}
 		});
 		message.channel.send(`${tag.username} is the Overlord with ${tag.count} OKs`);
-	}*/
+	}
 });
 
 OKBot.login(process.env.BOT_TOKEN);
