@@ -37,7 +37,7 @@ OKBot.on('message', message => {
 		rep = message.content.replace('ok','🆗');
 		message.delete()
 		message.channel.send(rep);
-		message.react('🆗')
+		//message.react('🆗')
 		counter ++;
 		/*(const tag = await Tags.create({
 			userID: message.author.username,
