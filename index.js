@@ -34,7 +34,8 @@ OKBot.on('message', message => {
 
 	if(message.content.toLowerCase().includes('ok') == true && !message.author.bot) {
 		rep = message.replace('ok','🆗');
-		message.edit(rep);
+		message.delete()		
+		message.channel.send(rep);
 		counter ++;
 		/*(const tag = await Tags.create({
 			userID: message.author.username,
