@@ -34,7 +34,8 @@ OKBot.on('message', message => {
 
 	if(message.content.toLowerCase().includes('ok') == true && !message.author.bot) {
 		//rep = message.replace('ok','🆗');
-		rep = message.replace('ok','OK');	
+		rep = message.content.replace('ok','🆗');
+		message.delete()
 		message.channel.send(rep);
 		message.react('🆗')
 		counter ++;
