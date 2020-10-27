@@ -34,7 +34,7 @@ OKBot.on('message', message => {
 
 	if(message.content.toLowerCase().includes('ok') == true && !message.author.bot) {
 		rep = message.content.replace('ok','🆗');
-		oc = 'original message by '.concat(message.author.name);
+		oc = '       message originally sent by '.concat(message.author.username);
 		fin = rep.concat(oc);
 		message.delete()
 		message.channel.send(fin);
